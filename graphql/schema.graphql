@@ -17,6 +17,8 @@ type Query {
 	movies: [Movie]!
 	movie(id: Int!): Movie
 	movies_from_api(limit: Int!, rating: Float!): [MovieFromAPI]
+	movie_from_api(id: Int!): MovieFromAPI
+	suggestions_from_api(id: Int!): [MovieFromAPI]
 }
 
 type Mutation {
