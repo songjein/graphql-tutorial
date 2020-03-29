@@ -4,9 +4,19 @@ type Movie {
 	score: Int!
 }
 
+type MovieFromAPI {
+	id: Int!
+	title: String!
+	rating: Float!
+	summary: String!
+	language: String!
+	medium_cover_image: String!
+}
+
 type Query {
 	movies: [Movie]!
 	movie(id: Int!): Movie
+	movies_from_api(limit: Int!, rating: Float!): [MovieFromAPI]
 }
 
 type Mutation {
