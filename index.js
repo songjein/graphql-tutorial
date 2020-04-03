@@ -6,4 +6,14 @@ const server = new GraphQLServer({
   typeDefs: "graphql/schema.graphql",
   resolvers,
 })
-server.start(() => console.log('Server is running on localhost:4000'))
+
+const cors = {
+	"origin": "*",
+	"methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+	"preflightContinue":false,
+	"optionsSuccessStatus": 204,
+};
+const options = {
+ cors,
+};
+server.start(options, () => console.log('Server is running on localhost:4000'))
